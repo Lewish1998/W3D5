@@ -1,23 +1,23 @@
 {% extends 'base.html' %}
 {% block content %}
 
-<a href="/">Home</a><br><br>
+<a class="links" href="/">Home</a><br><br>
 
-<div>
-  <form action="/add-book" method="post">
-    <label for="title">Title</label>
-    <input type="text" name="title" id='title'><br>
+<div class="form">
+    <form action="/add-book" method="post">
+        <label id="title" for="title">Title</label>
+        <input type="text" name="title" id='title'><br>
 
-    <label for="genre">Genre</label>
-    <input type="text" name="genre" id='genre'><br>
+        <label id="genre" for="genre">Genre</label>
+        <input type="text" name="genre" id='genre'><br>
 
-    <label for="author">Author</label>
-    <input type="text" name="author" id='author'><br>
+        <label id="author" for="author">Author</label>
+        <input type="text" name="author" id='author'><br>
 
-    <label for="description">Description</label><br>
-    <textarea name="description" id="description" cols="30" rows="2" placeholder="Please type here..."></textarea><br>
+        <label id="description" for="description">Description</label><br>
+        <textarea name="description" id="description" cols="30" rows="2" placeholder="Please type here..."></textarea><br>
 
-    <input type="submit" id="" value="Add Book">
-  </form>
+        <input type="submit" id="submit" value="Add Book">
+    </form>
 </div>
 {% endblock %}

@@ -26,3 +26,7 @@ def add_function():
     new_book = Book(title, description, author, genre)
     add_book(new_book)
     return render_template('add.html', book_list=book_list)
+
+@app.route('/view-book/<int:index>')
+def single_book(index):
+    return render_template('single.html', book_list=book_list[index])
