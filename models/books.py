@@ -19,5 +19,5 @@ book_list = [dune, the_hobbit]
 def add_book(book):
     book_list.append(book)
 
-# def remove_book(book):
-#     book_list.remove(book)
+def remove_book(index):
+    book_list.remove(index)

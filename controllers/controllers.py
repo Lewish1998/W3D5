@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, request
 from models.book_class import Book
-from models.books import book_list, add_book
+from models.books import book_list, add_book, remove_book
 
 
 
@@ -30,3 +30,12 @@ def add_function():
 @app.route('/view-book/<int:index>')
 def single_book(index):
     return render_template('single.html', book_list=book_list[index])
+
+@app.route('/delete-book/<int:index>')
+def delete(index):
+    remove_book(book_list[index])
+    return render_template('view.html', book_list=book_list)
+
+
+# @app.route('/error')
+
