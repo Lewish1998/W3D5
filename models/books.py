@@ -4,13 +4,15 @@ dune = Book(
     title='Dune',
     description='Dune is a 1965 epic science fiction novel by American author Frank Herbert, originally published as two separate serials in Analog magazine.',
     author='Frank Herbert',
-    genre='Fantasy')
+    genre='Fantasy',
+    book_num=0)
 
 the_hobbit = Book(
     title='The Hobbit',
     description='The Hobbit is the unforgettable story of Bilbo, a peace-loving hobbit, who embarks on a strange and magical adventure. A timeless classic.',
     author='J.R.R. Tolkien',
-    genre='Fantasy'
+    genre='Fantasy',
+    book_num=1
 )
 
 
@@ -21,3 +23,12 @@ def add_book(book):
 
 def remove_book(index):
     book_list.remove(index)
+
+def check_out(book):
+    book.checked_out = True
+    
+def check_in(book):
+    book.checked_out = False
+
+# for book in book_list:
+#     book.book_num += 1

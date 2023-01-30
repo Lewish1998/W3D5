@@ -4,20 +4,44 @@
 <div>
   <h1 class="heading">Lewis' Library</h1>
 </div>
-<a class="links" href="/">Home</a>
-<a href="/view-book">testing view book</a>
+<div class="links">
+<a href="/">Home</a>
+</div>
 
 
 
 {% for book in book_list %}
+
 <div class="books">
   <p>Title: {{ book.title }}</p>
   <p>Description: {{ book.description }}</p>
   <p>Author: {{ book.author }}</p>
   <p>Genre: {{ book.genre }}</p>
+
+
+{% if book.checked_out %}
+<span>Available: &#10060;</span>
+{% else %}
+<span>Available: &#9989;</span>
+{% endif %}
+
+<form action="/check-out" method="post">
+  <input type="submit" value="Check Out">
+</form>
+
+<form action="/check-in" method="post">
+<input type="submit" value="Check In">
+</form>
+
+<!-- <a href="/delete-book/{book.title}">Delete Book THIS DOESN'T WORK</a> -->
+
+<a href="/view-book/{{book.book_num}}">View Book</a>
+
 </div>
+
 <br>
 {% endfor %}
+
 
 
 {% endblock %}
