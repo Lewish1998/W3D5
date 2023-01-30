@@ -33,9 +33,15 @@
 <input type="submit" value="Check In">
 </form>
 
-<!-- <a href="/delete-book/{book.title}">Delete Book THIS DOESN'T WORK</a> -->
 
 <a href="/view-book/{{book.book_num}}">View Book</a>
+
+<form action="/delete{{book.book_num}}" method="post">
+<input type="submit" value="Delete">
+</form>
+
+
+</form>
 
 </div>
 

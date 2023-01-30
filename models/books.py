@@ -30,5 +30,7 @@ def check_out(book):
 def check_in(book):
     book.checked_out = False
 
-# for book in book_list:
-#     book.book_num += 1
+def delete_me(book):
+    book.delete = True
+    if book.delete:
+        book_list.remove(book)

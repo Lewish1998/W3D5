@@ -7,3 +7,4 @@ class Book():
         self.genre = genre
         self.checked_out = False
         self.book_num = book_num
+        self.book_delete = False

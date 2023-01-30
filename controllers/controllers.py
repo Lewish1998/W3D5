@@ -1,7 +1,7 @@
 from app import app
 from flask import render_template, request
 from models.book_class import Book
-from models.books import book_list, add_book, remove_book, check_in, check_out
+from models.books import book_list, add_book, delete_me, check_in, check_out
 
 
 
@@ -33,17 +33,14 @@ def single_book(index):
     return render_template('single.html', book_list=book_list[index])
 
 
-@app.route('/delete-book/<int:index>')
+@app.route('/delete/<int:index>')
 def delete(index):
-    remove_book(book_list[index])
+
+    delete_me(book_list[index])
     return render_template('view.html', book_list=book_list)
 
 
 
-@app.route('/delete')
-def delete_page():#form or something here?
-    return render_template('delete.html', book_list=book_list)   
-# @app.route('/error')
 
 @app.route('/check-in', methods=['POST'])
 def checkin():
