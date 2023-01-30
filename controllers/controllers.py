@@ -23,7 +23,8 @@ def add_function():
     description = request.form['description']
     author = request.form['author']
     genre = request.form['genre']
-    new_book = Book(title, description, author, genre)
+    book_num = len(book_list)
+    new_book = Book(title, description, author, genre, book_num)
     add_book(new_book)
     return render_template('add.html', book_list=book_list)
 
